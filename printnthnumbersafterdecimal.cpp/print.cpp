@@ -7,4 +7,5 @@ int main()
     cout<<"Give any float number: ";
     cin>>n;
     cout<<fixed<<setprecision(12);
+    return 0;
 }
