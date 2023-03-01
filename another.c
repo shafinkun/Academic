@@ -6,6 +6,6 @@ int main()
         {
     printf("\n\t %d",i);}
     return 0;
-    /*this a high time you learnt programing language by this
+    /*this is high time you learnt programing language by this
     free time. you can't get it in life ever.*/
 }
