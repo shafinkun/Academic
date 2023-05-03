@@ -1,14 +1,22 @@
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+int main()
+{
+    int number=1,n;
+    printf("Give the value of n: ");
+    scanf("%d",&n);
+    while(n>0){
+        number++;
+        int flag=0;
+        for(int i=2;i<number;i++)
+        {
+            if(number%i==0){ 
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0){printf("%d ",number);
+        n--;}
 
-int n,row,col;
-printf("Enter a number: ");
-scanf("%d",&n);
-    for(row=n;row>0;row--)
-    {
-        for(col=(row*2);col>1;col--)
-        {printf("*");}
-        printf("\n");
     }
-return 0;
+    return 0;
 }
