@@ -4,7 +4,7 @@ int main()
 {
     int m, n;
     printf("\tNote: To sum Two matrices, both need to meet with the diamentions\n");
-    printf("Give the value of row and column respectively: ");
+    printf("Give row and column respectively: ");
     scanf("%d%d", &m, &n);
     int a[m][n];
     int b[m][n];
@@ -35,6 +35,6 @@ int main()
             printf("%d ",c[i][j]);
         }
         printf("\n");
-
     }
+    return 0;
 }
