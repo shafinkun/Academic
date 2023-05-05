@@ -1,12 +1,13 @@
-#include<stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
 int main()
 {
     int i,j;
     for(i=1;i<=9;i=i+2)
     {
-        for(j=7;j<=5;j=j-2)
+        for(j=1;j<=5;j=j+2)
         {
-            printf("I=%d J=%d\n",i,j);
+            cout<<"I= "<<i<<" J= "<<j<<endl;
         }
     }
 }
