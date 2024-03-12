@@ -42,8 +42,8 @@ void printGraph(int graph[MAX_V][MAX_V], int V)
 int main()
 {
     int V = 5; // Number of vertices
-    int directedGraph[100][100] = {0};
-    int undirectedGraph[100][100] = {0};
+    int directedGraph[MAX_V][MAX_V] = {0};
+    int undirectedGraph[MAX_V][MAX_V] = {0};
 
     // Add edges for directed graph
     addEdge(directedGraph, 0, 1);
