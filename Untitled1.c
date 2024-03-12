@@ -5,7 +5,7 @@
 
     printf("What is the name?");
     name=getchar();
-    printf("HI %c",&name);
+    printf("Hellow %c!!!",&name);
 
     return 0;
 
