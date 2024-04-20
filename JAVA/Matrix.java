@@ -66,6 +66,27 @@ public class Matrix
         }
     }
 
+    void subtractMatrix(Matrix m1, Matrix m2)
+    {
+        if (m1.getRows() != m2.getRows() || m1.getColumns() != m2.getColumns())
+        {
+            System.out.println("Matrices cannot be subtracted");
+        }
+        else
+        {
+            System.out.println("The subtraction of the two matrices is: ");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    matrix[i][j] = m1.matrix[i][j] - m2.matrix[i][j];
+                    System.out.print(matrix[i][j] + "\t");
+                }
+                System.out.println();
+            }
+        }
+    }
+
     void multiplyMatrix(Matrix m1, Matrix m2)
     {
         if (m1.getColumns() != m2.getRows())
@@ -113,6 +134,9 @@ public class Matrix
         
         Matrix obj3 = new Matrix(r1, c2);
         obj3.addMatrix(obj1, obj2);
+        
+        Matrix obj5 = new Matrix(r1, c1);
+        obj5.subtractMatrix(obj1, obj2);
 
         Matrix obj4 = new Matrix(r1, c2);
         obj4.multiplyMatrix(obj1, obj2);
