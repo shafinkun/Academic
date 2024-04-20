@@ -27,9 +27,9 @@ public class Avg {
 
         if (count > 0) {
             double average = (double) sum / count;
-            System.out.println("Average: " + average);
+            System.out.print("Average: " + average);
         } else {
-            System.out.println("No numbers entered.");
+            System.out.print("No numbers entered.");
         }
 
     }
