@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Dictionary {
+public class directory {
     private static Map<String, Person> database = new HashMap<>();
     private static int uniqueIdCounter = 1;
 
