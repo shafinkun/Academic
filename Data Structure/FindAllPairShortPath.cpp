@@ -1,59 +1,47 @@
-// Finding All Pairs Shortest Paths in a Graph
-// The Floyd-Warshall algorithm is an efficient algorithm for finding all pairs shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles). The algorithm is based on dynamic programming and has a time complexity of O(V^3), where V is the number of vertices in the graph.
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+#define INF 1000
 
-#define INF 99999
-#define V 4
-
-void printSolution(int dist[][V])
+void display(int a[3][3])
 {
-    cout << "Shortest distances between every pair of vertices:" << endl;
-    for (int i = 0; i < V; ++i)
+    cout << "Minimum distance from any node: \n";
+    for (int i = 0; i < 3; i++)
     {
-        for (int j = 0; j < V; ++j)
+        for (int j = 0; j < 3; j++)
         {
-            if (dist[i][j] == INF)
-                cout << "INF ";
-            else
-                cout << dist[i][j] << " ";
+            if (a[i][j] == INF)
+            {
+                cout << "INFINITY \t";
+                continue;
+            }
+            cout << a[i][j] << "\t";
         }
         cout << endl;
     }
 }
 
-void floydWarshall(int graph[][V])
+void floyd(int a[3][3])
 {
-    int dist[V][V];
+    int i, j, k;
 
-    // Initialize the distance matrix with the given graph
-    for (int i = 0; i < V; ++i)
-        for (int j = 0; j < V; ++j)
-            dist[i][j] = graph[i][j];
-
-    // Update distance matrix by considering all vertices as intermediate vertices
-    for (int k = 0; k < V; ++k)
-    {
-        for (int i = 0; i < V; ++i)
-        {
-            for (int j = 0; j < V; ++j)
+    for (k = 0; k < 3; k++)
+        for (i = 0; i < 3; i++)
+            for (j = 0; j < 3; j++)
             {
-                if (dist[i][k] + dist[k][j] < dist[i][j])
-                    dist[i][j] = dist[i][k] + dist[k][j];
+                if (a[i][j] > a[i][k] + a[k][j] and a[i][k] != INFINITY and a[k][j] != INFINITY)
+                {
+                    a[i][j] = a[i][k] + a[k][j];
+                }
             }
-        }
-    }
-
-    printSolution(dist);
+    display(a);
 }
 
 int main()
 {
-    int graph[V][V] = {{0, 5, INF, 10},
-                       {INF, 0, 3, INF},
-                       {INF, INF, 0, 1},
-                       {INF, INF, INF, 0}};
-    floydWarshall(graph);
-    
+    int graph[3][3] = {{3, 5, INF},
+                       {7, 9, INF},
+                       {10, 11, INF}};
+    floyd(graph);
+
     return 0;
 }
