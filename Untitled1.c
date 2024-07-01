@@ -8,5 +8,4 @@
     printf("Hellow %c!!!",&name);
 
     return 0;
-
 }
