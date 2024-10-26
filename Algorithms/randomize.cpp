@@ -15,16 +15,7 @@ int LasVegas(vector<int> &v, int sz)
 }
 int main()
 {
-    vector<int> v = {0,
-                     1,
-                     2,
-                     3,
-                     4,
-                     5,
-                     6,
-                     7,
-                     7,
-                     1};
+    vector<int> v = {0, 1, 2, 3, 4, 5, 6, 7, 7, 1};
 
     int sz = v.size();
 
