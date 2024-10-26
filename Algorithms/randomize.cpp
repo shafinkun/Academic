@@ -1,21 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int LasVegas(vector<int> &v, int sz)
+{
+    srand(time(0));
+
+    while (1)
+    {
+        int ind1 = rand() % sz, ind2 = rand() % sz;
+
+        if (ind1 != ind2 and v[ind1] == v[ind2])
+            return ind1;
+    }
+}
 int main()
 {
-    srand(time(NULL));
-    
-    int n;
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    vector<int> v = {0,
+                     1,
+                     2,
+                     3,
+                     4,
+                     5,
+                     6,
+                     7,
+                     7,
+                     1};
 
-    vector<int> v(n);
-    for (auto &x : v)
-        cin >> x;
+    int sz = v.size();
 
-    int pick = rand() % (n);
+    int index = LasVegas(v, sz);
 
-    cout << "Random pick: " << v[pick] << endl;
-
+    cout << "Repeating element: " << v[index] << endl;
     return 0;
 }
